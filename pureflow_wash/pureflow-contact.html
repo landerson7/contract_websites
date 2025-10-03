@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PureFlow Wash — Contact Us</title>
+  <meta name="description" content="Contact PureFlow Wash for a free pressure washing estimate in the Tampa Bay area." />
+  <style>
+    :root {
+      --bg: #0a2233;
+      --brand: #1f71d7;
+      --text: #0f2230;
+      --muted: #5b6b77;
+      --card: #F5F7FA;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color: var(--text);
+      background: #f6f8fb;
+      line-height: 1.55;
+    }
+    header.hero {
+      background: linear-gradient(180deg, #87ceeb, #f6f8fb 80%);
+      color: #0a2233;
+      padding: clamp(28px, 6vw, 56px) 20px clamp(40px, 8vw, 80px) 20px;
+      text-align: center;
+    }
+    .hero .brand {
+      display: inline-flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .hero img.logo {
+      width: clamp(84px, 12vw, 120px);
+      height: auto;
+      filter: drop-shadow(0 6px 16px rgba(31,113,215,.35));
+    }
+    .hero h1 {
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: clamp(28px, 4.2vw, 44px);
+    }
+    .hero p.sub {
+      margin: 8px auto 0;
+      max-width: 680px;
+      font-size: clamp(15px, 2.4vw, 18px);
+      color: #5b6b77;
+    }
+    main {
+      max-width: 1100px;
+      margin: -36px auto 80px;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(4, 23, 38, .12);
+      padding: clamp(18px, 3vw, 28px);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    form {
+      display: grid;
+      gap: 14px;
+    }
+    label { font-weight: 600; font-size: 14px; color: #0c2f47; }
+    .row { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #d8e2ea;
+      background: #fbfdff;
+      font: inherit;
+      outline: none;
+      transition: border .2s, box-shadow .2s;
+    }
+    input:focus, textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(31,113,215,.12); }
+    textarea { min-height: 140px; resize: vertical; }
+    .required::after { content: " *"; color: #d43131; font-weight: 700; }
+    button[type="submit"] {
+      background: var(--brand);
+      color: white;
+      padding: 12px 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(31,113,215,.25);
+    }
+    .side {
+      display: grid;
+      align-content: stretch;
+      gap: 14px;
+      height: 100%;
+    }
+    .contact a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact a:hover { text-decoration: underline; }
+    .badge { display: inline-block; background: #eaf3ff; color: #0c2f47; padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 12px; }
+    .gallery {
+      display: grid; gap: 14px;
+      grid-template-columns: repeat(12, 1fr);
+      margin-top: 22px;
+    }
+    .gallery img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 18px rgba(13,35,52,.16); }
+    .gallery .wide { grid-column: span 7; }
+    .gallery .tall { grid-column: span 5; }
+    @media (max-width: 900px) { .gallery .wide, .gallery .tall { grid-column: span 12; } }
+    section { margin-top: 28px; }
+    h2 { font-size: clamp(20px,3vw,26px); margin: 0 0 8px; }
+    .muted { color: var(--muted); }
+    .gf-embed iframe { width: 100%; border: 0; min-height: 700px; background: #F5F7FA; border-radius: 12px; box-shadow: 0 10px 30px rgba(4, 23, 38, .08); }
+    .footer-note { text-align: center; margin-top: 36px; color: var(--muted); }
+    
+    /* Carousel Styles */
+    .carousel-container {
+      max-width: 1100px;
+      margin: -10px auto 40px;
+      padding: 0 20px;
+      position: relative;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(4, 23, 38, .12);
+      background: #F5F7FA;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 3s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #F5F7FA;
+    }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--brand);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+    .carousel-nav:hover {
+      background: #F5F7FA;
+      transform: translateY(-50%) scale(1.1);
+    }
+    .carousel-nav.prev {
+      left: 20px;
+    }
+    .carousel-nav.next {
+      right: 20px;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+    .carousel-caption h3 {
+      margin: 0 0 8px;
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 700;
+    }
+    .carousel-caption p {
+      margin: 0;
+      font-size: clamp(14px, 2vw, 16px);
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <img class="logo" src="./image3.png">
+           <h1>Get in Touch with PureFlow Wash</h1>
+    </div>
+    <p class="sub">Have questions or want a free estimate? Send us a message or call — we’ll get right back to you.</p>
+  </header>
+
+  <!-- Image Carousel -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="./IMG_4665.PNG" alt="Professional driveway cleaning - Before and after results">
+        </div>
+        <div class="carousel-slide">
+          <img src="./IMG_4665.PNG" alt="Professional driveway cleaning - Before and after results">
+          <div class="carousel-caption">
+            <h3>Quality Results</h3>
+            <p>Transform your property with our expert cleaning services</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./IMG_4665.PNG" alt="Professional driveway cleaning - Before and after results">
+          <div class="carousel-caption">
+            <h3>Tampa Bay's Trusted Service</h3>
+            <p>Professional, reliable, and eco-friendly pressure washing</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-nav prev" onclick="moveSlide(-1)">‹</button>
+      <button class="carousel-nav next" onclick="moveSlide(1)">›</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="grid">
+      <section class="card">
+        <h2>Request a Free Estimate</h2>
+        <p class="muted">Tell us what you need cleaned and where. We’ll confirm details and pricing ASAP.</p>
+        <form name="contact" method="post" action="#">
+          <div class="row">
+            <div>
+              <label for="name" class="required">Name</label>
+              <input id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div>
+              <label for="phone" class="required">Phone</label>
+              <input id="phone" name="phone" placeholder="(727) 947-2565" required inputmode="tel" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="address">Address <span class="muted">(for quotes)</span></label>
+              <input id="address" name="address" placeholder="Street, City, ZIP" />
+            </div>
+          </div>
+
+          <div>
+            <label for="message">What can we clean?</label>
+            <textarea id="message" name="message" placeholder="Driveway, sidewalks, pool deck, fence, siding, etc."></textarea>
+          </div>
+
+          <button type="submit" aria-label="Request a Free Estimate">Request a Free Estimate</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="contact">
+          <h2>Call or Email</h2>
+          <p>
+            📞 <a href="tel:+17279472565">727-947-2565</a><br/>
+            ✉️ <a href="mailto:joshanderson051@gmail.com">joshanderson051@gmail.com</a>
+          </p>
+          <span class="badge">Proudly serving Tampa Bay &amp; surrounding areas</span>
+        </div>
+
+        <section>
+          <h2>Google Form (optional)</h2>
+          <p class="muted">Already built a Google Form? Paste its embed link below to show it on this page.</p>
+          <div class="gf-embed">
+            <!-- Replace the src below with your Google Form's embed URL:
+                 In Google Forms: Send → &lt;&gt; Embed → copy the link → paste into src -->
+            <iframe title="PureFlow Wash — Request Form" src="about:blank" allowtransparency="true"></iframe>
+          </div>
+        </section>
+      </section>
+    </div>
+
+
+    <p class="footer-note">Eco‑friendly • Insured • Reliable &nbsp;&middot;&nbsp; Serving Tampa Bay</p>
+  </main>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const track = document.getElementById('carouselTrack');
+
+    function moveSlide(direction) {
+      currentSlide += direction;
+      
+      if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+      } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+      }
+      
+      const translateX = -currentSlide * 100;
+      track.style.transform = `translateX(${translateX}%)`;
+    }
+
+    // Auto-advance slides every 5 seconds
+    setInterval(() => {
+      moveSlide(1);
+    }, 5000);
+
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let endX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    track.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const difference = startX - endX;
+      
+      if (Math.abs(difference) > 50) {
+        if (difference > 0) {
+          moveSlide(1); // Swipe left, go to next
+        } else {
+          moveSlide(-1); // Swipe right, go to previous
+        }
+      }
+    });
+  </script>
+</body>
+</html>
